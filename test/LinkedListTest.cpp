@@ -204,8 +204,7 @@ TEST_F(LinkedListTest,deleteASingleNodeWithGivenValueInLinkedListReturnsEmptyLis
 
     bool deleted = deleteANodeWithGivenValue(onlyNode,4);
 
-    EXPECT_TRUE(onlyNode->nextNode == nullptr);
-    EXPECT_EQ(onlyNode->value,0);
+    EXPECT_EQ(deleted,true);
 }
 
 TEST_F(LinkedListTest,getPreviousNodeWithGivenValue){

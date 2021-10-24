@@ -120,9 +120,11 @@ bool deleteANodeWithGivenValue(LinkedList *existingList,int value){
     }
     LinkedList *previouseNode = getPreviousNodeToAGivenValue(existingList,value);
 
+    // Single node 
     if (previouseNode->nextNode == nullptr && previouseNode->value ==0)
     {
-      return false;
+      delete nodeWithGivenValue;
+      return true;
     }else
     {
       previouseNode->nextNode = nodeWithGivenValue->nextNode;
