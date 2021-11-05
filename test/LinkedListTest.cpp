@@ -247,3 +247,55 @@ TEST_F(LinkedListTest,deleteASingleNodeWithoutGivenValueLinkedListReturnsFalse){
 
     EXPECT_EQ(deleted,false);
 }   
+
+TEST_F(LinkedListTest,updateASigleLinkedListNodeReturnsNewValue){
+
+    LinkedList *earlierNode = addNewNode(5);
+
+    updateANodeValue(earlierNode,5,8);
+
+    EXPECT_EQ(earlierNode->value,8);
+    EXPECT_TRUE(earlierNode->nextNode==nullptr);
+}
+
+TEST_F(LinkedListTest,updateASingleLinkedListWithoutGivenValueReturnsEarlierValue){
+
+    LinkedList *earlierNode = addNewNode(25);
+
+    updateANodeValue(earlierNode,45,5);
+
+    EXPECT_TRUE(earlierNode->nextNode == nullptr);
+    EXPECT_EQ(earlierNode->value,25);
+}
+
+TEST_F(LinkedListTest,updateANodeInGivenLinkedListReturnsNewValue){
+
+    LinkedList *firstNode = addNewNode(5);
+    LinkedList *secondNode = addNewNode(75);
+    LinkedList *thirdNode = addNewNode(7);
+
+    firstNode->nextNode = secondNode;
+    secondNode->nextNode = thirdNode;
+
+    updateANodeValue(firstNode,7,68);
+
+    EXPECT_EQ(thirdNode->value,68);
+    EXPECT_TRUE(thirdNode->nextNode == nullptr);
+}
+
+TEST_F(LinkedListTest,updateAListWithoutGivenValueReturnsEarlierValue){
+
+    LinkedList *firstNode = addNewNode(5);
+    LinkedList *secondNode = addNewNode(75);
+    LinkedList *thirdNode = addNewNode(7);
+
+    firstNode->nextNode = secondNode;
+    secondNode->nextNode = thirdNode;
+
+    updateANodeValue(firstNode,17,68);
+
+    EXPECT_EQ(firstNode->value,5);
+    EXPECT_EQ(secondNode->value,75);
+    EXPECT_EQ(thirdNode->value,7);
+    EXPECT_TRUE(thirdNode->nextNode == nullptr);
+}

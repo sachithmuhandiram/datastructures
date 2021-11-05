@@ -132,5 +132,15 @@ bool deleteANodeWithGivenValue(LinkedList *existingList,int value){
       return true;
     }
     
-    
+}
+
+void updateANodeValue(LinkedList *currentLinkedList,int findValue,int replaceValue){
+
+  LinkedList *nodeWithGivenValue = getANodeWithGivenValue(currentLinkedList,findValue);
+
+  if (nodeWithGivenValue->value == findValue)
+  {
+    nodeWithGivenValue->value = replaceValue;
+  }
+  //nodeWithGivenValue->value = replaceValue;
 }
