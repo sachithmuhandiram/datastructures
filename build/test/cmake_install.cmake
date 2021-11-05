@@ -1,4 +1,4 @@
-# Install script for directory: /home/sachith/Documents/Learning/CPP/datastructures/test
+# Install script for directory: /home/sachith/Documents/Personal/Projects/datastructures/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

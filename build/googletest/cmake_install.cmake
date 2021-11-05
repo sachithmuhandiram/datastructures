@@ -1,4 +1,4 @@
-# Install script for directory: /home/sachith/Documents/Learning/CPP/datastructures/googletest
+# Install script for directory: /home/sachith/Documents/Personal/Projects/datastructures/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/sachith/Documents/Learning/CPP/datastructures/build/googletest/googlemock/cmake_install.cmake")
+  include("/home/sachith/Documents/Personal/Projects/datastructures/build/googletest/googlemock/cmake_install.cmake")
 
 endif()
 
