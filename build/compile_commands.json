@@ -1,8 +1,8 @@
 [
 {
   "directory": "/home/sachith/Documents/Personal/Projects/datastructures/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-8    -g -DDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/LinkedList.dir/linkedList.cpp.o -c /home/sachith/Documents/Personal/Projects/datastructures/linkedList.cpp",
-  "file": "/home/sachith/Documents/Personal/Projects/datastructures/linkedList.cpp"
+  "command": "/usr/bin/x86_64-linux-gnu-g++-8    -g -DDEBUG -fPIC   -std=gnu++11 -o CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.o -c /home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.cpp",
+  "file": "/home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.cpp"
 },
 {
   "directory": "/home/sachith/Documents/Personal/Projects/datastructures/build/googletest/googlemock",
@@ -26,7 +26,7 @@
 },
 {
   "directory": "/home/sachith/Documents/Personal/Projects/datastructures/build/test",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-8   -isystem /home/sachith/Documents/Personal/Projects/datastructures/googletest/googletest/include -isystem /home/sachith/Documents/Personal/Projects/datastructures/googletest/googletest  -g -DDEBUG -fPIE   -std=gnu++11 -o CMakeFiles/LinkedListTest.dir/LinkedListTest.cpp.o -c /home/sachith/Documents/Personal/Projects/datastructures/test/LinkedListTest.cpp",
-  "file": "/home/sachith/Documents/Personal/Projects/datastructures/test/LinkedListTest.cpp"
+  "command": "/usr/bin/x86_64-linux-gnu-g++-8   -isystem /home/sachith/Documents/Personal/Projects/datastructures/googletest/googletest/include -isystem /home/sachith/Documents/Personal/Projects/datastructures/googletest/googletest  -g -DDEBUG -fPIE   -std=gnu++11 -o CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.o -c /home/sachith/Documents/Personal/Projects/datastructures/test/DoublyLinkedListTest.cpp",
+  "file": "/home/sachith/Documents/Personal/Projects/datastructures/test/DoublyLinkedListTest.cpp"
 }
 ]

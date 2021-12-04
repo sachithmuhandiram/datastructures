@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-set(This LinkedList)
+set(This DoublyLinkedList)
 
 project(${This} CXX)
 
@@ -12,10 +12,10 @@ enable_testing()
 add_subdirectory(googletest)
 
 set(Header
-    linkedList.hpp
+    doublylinkedList.hpp
     )
 set(Sources
-    linkedList.cpp
+    doublylinkedList.cpp
     )
 
 add_library(${This} STATIC ${Sources} ${Headers})

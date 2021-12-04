@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /home/sachith/Documents/Personal/Projects/datastructures/buil
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -78,18 +90,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -168,17 +168,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named LinkedList
+# Target rules for targets named DoublyLinkedList
 
 # Build rule for target.
-LinkedList: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 LinkedList
-.PHONY : LinkedList
+DoublyLinkedList: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DoublyLinkedList
+.PHONY : DoublyLinkedList
 
 # fast build rule for target.
-LinkedList/fast:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/build
-.PHONY : LinkedList/fast
+DoublyLinkedList/fast:
+	$(MAKE) -f CMakeFiles/DoublyLinkedList.dir/build.make CMakeFiles/DoublyLinkedList.dir/build
+.PHONY : DoublyLinkedList/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -233,44 +233,44 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named LinkedListTest
+# Target rules for targets named DoublyLinkedListTest
 
 # Build rule for target.
-LinkedListTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 LinkedListTest
-.PHONY : LinkedListTest
+DoublyLinkedListTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DoublyLinkedListTest
+.PHONY : DoublyLinkedListTest
 
 # fast build rule for target.
-LinkedListTest/fast:
-	$(MAKE) -f test/CMakeFiles/LinkedListTest.dir/build.make test/CMakeFiles/LinkedListTest.dir/build
-.PHONY : LinkedListTest/fast
+DoublyLinkedListTest/fast:
+	$(MAKE) -f test/CMakeFiles/DoublyLinkedListTest.dir/build.make test/CMakeFiles/DoublyLinkedListTest.dir/build
+.PHONY : DoublyLinkedListTest/fast
 
-linkedList.o: linkedList.cpp.o
+doublylinkedList.o: doublylinkedList.cpp.o
 
-.PHONY : linkedList.o
+.PHONY : doublylinkedList.o
 
 # target to build an object file
-linkedList.cpp.o:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/linkedList.cpp.o
-.PHONY : linkedList.cpp.o
+doublylinkedList.cpp.o:
+	$(MAKE) -f CMakeFiles/DoublyLinkedList.dir/build.make CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.o
+.PHONY : doublylinkedList.cpp.o
 
-linkedList.i: linkedList.cpp.i
+doublylinkedList.i: doublylinkedList.cpp.i
 
-.PHONY : linkedList.i
+.PHONY : doublylinkedList.i
 
 # target to preprocess a source file
-linkedList.cpp.i:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/linkedList.cpp.i
-.PHONY : linkedList.cpp.i
+doublylinkedList.cpp.i:
+	$(MAKE) -f CMakeFiles/DoublyLinkedList.dir/build.make CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.i
+.PHONY : doublylinkedList.cpp.i
 
-linkedList.s: linkedList.cpp.s
+doublylinkedList.s: doublylinkedList.cpp.s
 
-.PHONY : linkedList.s
+.PHONY : doublylinkedList.s
 
 # target to generate assembly for a file
-linkedList.cpp.s:
-	$(MAKE) -f CMakeFiles/LinkedList.dir/build.make CMakeFiles/LinkedList.dir/linkedList.cpp.s
-.PHONY : linkedList.cpp.s
+doublylinkedList.cpp.s:
+	$(MAKE) -f CMakeFiles/DoublyLinkedList.dir/build.make CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.s
+.PHONY : doublylinkedList.cpp.s
 
 # Help Target
 help:
@@ -278,11 +278,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... install/strip"
-	@echo "... LinkedList"
 	@echo "... list_install_components"
+	@echo "... DoublyLinkedList"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... install"
@@ -290,10 +290,10 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... LinkedListTest"
-	@echo "... linkedList.o"
-	@echo "... linkedList.i"
-	@echo "... linkedList.s"
+	@echo "... DoublyLinkedListTest"
+	@echo "... doublylinkedList.o"
+	@echo "... doublylinkedList.i"
+	@echo "... doublylinkedList.s"
 .PHONY : help
 
 

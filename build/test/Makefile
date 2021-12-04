@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /home/sachith/Documents/Personal/Projects/datastructures/buil
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -88,18 +100,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -168,46 +168,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-test/CMakeFiles/LinkedListTest.dir/rule:
-	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LinkedListTest.dir/rule
-.PHONY : test/CMakeFiles/LinkedListTest.dir/rule
+test/CMakeFiles/DoublyLinkedListTest.dir/rule:
+	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/DoublyLinkedListTest.dir/rule
+.PHONY : test/CMakeFiles/DoublyLinkedListTest.dir/rule
 
 # Convenience name for target.
-LinkedListTest: test/CMakeFiles/LinkedListTest.dir/rule
+DoublyLinkedListTest: test/CMakeFiles/DoublyLinkedListTest.dir/rule
 
-.PHONY : LinkedListTest
+.PHONY : DoublyLinkedListTest
 
 # fast build rule for target.
-LinkedListTest/fast:
-	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f test/CMakeFiles/LinkedListTest.dir/build.make test/CMakeFiles/LinkedListTest.dir/build
-.PHONY : LinkedListTest/fast
+DoublyLinkedListTest/fast:
+	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f test/CMakeFiles/DoublyLinkedListTest.dir/build.make test/CMakeFiles/DoublyLinkedListTest.dir/build
+.PHONY : DoublyLinkedListTest/fast
 
-LinkedListTest.o: LinkedListTest.cpp.o
+DoublyLinkedListTest.o: DoublyLinkedListTest.cpp.o
 
-.PHONY : LinkedListTest.o
+.PHONY : DoublyLinkedListTest.o
 
 # target to build an object file
-LinkedListTest.cpp.o:
-	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f test/CMakeFiles/LinkedListTest.dir/build.make test/CMakeFiles/LinkedListTest.dir/LinkedListTest.cpp.o
-.PHONY : LinkedListTest.cpp.o
+DoublyLinkedListTest.cpp.o:
+	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f test/CMakeFiles/DoublyLinkedListTest.dir/build.make test/CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.o
+.PHONY : DoublyLinkedListTest.cpp.o
 
-LinkedListTest.i: LinkedListTest.cpp.i
+DoublyLinkedListTest.i: DoublyLinkedListTest.cpp.i
 
-.PHONY : LinkedListTest.i
+.PHONY : DoublyLinkedListTest.i
 
 # target to preprocess a source file
-LinkedListTest.cpp.i:
-	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f test/CMakeFiles/LinkedListTest.dir/build.make test/CMakeFiles/LinkedListTest.dir/LinkedListTest.cpp.i
-.PHONY : LinkedListTest.cpp.i
+DoublyLinkedListTest.cpp.i:
+	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f test/CMakeFiles/DoublyLinkedListTest.dir/build.make test/CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.i
+.PHONY : DoublyLinkedListTest.cpp.i
 
-LinkedListTest.s: LinkedListTest.cpp.s
+DoublyLinkedListTest.s: DoublyLinkedListTest.cpp.s
 
-.PHONY : LinkedListTest.s
+.PHONY : DoublyLinkedListTest.s
 
 # target to generate assembly for a file
-LinkedListTest.cpp.s:
-	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f test/CMakeFiles/LinkedListTest.dir/build.make test/CMakeFiles/LinkedListTest.dir/LinkedListTest.cpp.s
-.PHONY : LinkedListTest.cpp.s
+DoublyLinkedListTest.cpp.s:
+	cd /home/sachith/Documents/Personal/Projects/datastructures/build && $(MAKE) -f test/CMakeFiles/DoublyLinkedListTest.dir/build.make test/CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.s
+.PHONY : DoublyLinkedListTest.cpp.s
 
 # Help Target
 help:
@@ -215,17 +215,17 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... list_install_components"
-	@echo "... install/strip"
-	@echo "... LinkedListTest"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... DoublyLinkedListTest"
 	@echo "... install"
-	@echo "... LinkedListTest.o"
-	@echo "... LinkedListTest.i"
-	@echo "... LinkedListTest.s"
+	@echo "... DoublyLinkedListTest.o"
+	@echo "... DoublyLinkedListTest.i"
+	@echo "... DoublyLinkedListTest.s"
 .PHONY : help
 
 
