@@ -64,11 +64,11 @@ CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.o: ../doublylinkedList.cpp
 
 CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.i"
-	/usr/bin/x86_64-linux-gnu-g++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.cpp > CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.i
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.s"
-	/usr/bin/x86_64-linux-gnu-g++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.cpp -o CMakeFiles/DoublyLinkedList.dir/doublylinkedList.cpp.s
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 # Object files for target DoublyLinkedList
 DoublyLinkedList_OBJECTS = \

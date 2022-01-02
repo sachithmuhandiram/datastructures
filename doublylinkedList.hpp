@@ -7,3 +7,5 @@ class DoublyLinkedList{
     DoublyLinkedList* earlyNode {NULL};
     DoublyLinkedList* nextNode {NULL};
 };
+
+DoublyLinkedList *addANode(int);

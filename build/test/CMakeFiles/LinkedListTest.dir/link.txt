@@ -1,1 +1,0 @@
-/usr/bin/x86_64-linux-gnu-g++-8  -g -DDEBUG   CMakeFiles/LinkedListTest.dir/LinkedListTest.cpp.o  -o LinkedListTest ../lib/libgtest_maind.a ../libLinkedList.a -lncurses ../lib/libgtestd.a -lpthread 

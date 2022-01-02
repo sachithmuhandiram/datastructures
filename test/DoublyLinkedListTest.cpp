@@ -23,3 +23,20 @@ class DoublyLinkedListTest : public ::testing::Test{
             //delete linkedlist;
         }
 };
+
+
+TEST_F(DoublyLinkedListTest,initializingANode){
+    
+    ASSERT_EQ(doublylinkedlist->value,0);
+    EXPECT_TRUE(doublylinkedlist->earlyNode == nullptr);
+    EXPECT_TRUE(doublylinkedlist->nextNode == nullptr);
+}
+
+TEST_F(DoublyLinkedListTest,initializingANodeWithAValue){
+    
+    DoublyLinkedList *doublylinkedlist = addANode(5);
+    
+    ASSERT_EQ(doublylinkedlist->value,5);
+    EXPECT_TRUE(doublylinkedlist->earlyNode == nullptr);
+    EXPECT_TRUE(doublylinkedlist->nextNode == nullptr);
+}

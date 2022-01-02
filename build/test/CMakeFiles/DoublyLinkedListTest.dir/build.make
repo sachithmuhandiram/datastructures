@@ -64,11 +64,11 @@ test/CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.o: ../test/Dou
 
 test/CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.i"
-	cd /home/sachith/Documents/Personal/Projects/datastructures/build/test && /usr/bin/x86_64-linux-gnu-g++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sachith/Documents/Personal/Projects/datastructures/test/DoublyLinkedListTest.cpp > CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.i
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_PREPROCESSED_SOURCE
 
 test/CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.s"
-	cd /home/sachith/Documents/Personal/Projects/datastructures/build/test && /usr/bin/x86_64-linux-gnu-g++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sachith/Documents/Personal/Projects/datastructures/test/DoublyLinkedListTest.cpp -o CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.s
+	$(CMAKE_COMMAND) -E cmake_unimplemented_variable CMAKE_CXX_CREATE_ASSEMBLY_SOURCE
 
 # Object files for target DoublyLinkedListTest
 DoublyLinkedListTest_OBJECTS = \
@@ -79,9 +79,7 @@ DoublyLinkedListTest_EXTERNAL_OBJECTS =
 
 test/DoublyLinkedListTest: test/CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.o
 test/DoublyLinkedListTest: test/CMakeFiles/DoublyLinkedListTest.dir/build.make
-test/DoublyLinkedListTest: lib/libgtest_maind.a
 test/DoublyLinkedListTest: libDoublyLinkedList.a
-test/DoublyLinkedListTest: lib/libgtestd.a
 test/DoublyLinkedListTest: test/CMakeFiles/DoublyLinkedListTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sachith/Documents/Personal/Projects/datastructures/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable DoublyLinkedListTest"
 	cd /home/sachith/Documents/Personal/Projects/datastructures/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DoublyLinkedListTest.dir/link.txt --verbose=$(VERBOSE)

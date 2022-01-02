@@ -7,4 +7,12 @@
 #IncludeRegexTransform: 
 
 /home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.cpp
+doublylinkedList.hpp
+/home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.hpp
+
+/home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.hpp
+cstddef
+-
+iostream
+-
 
