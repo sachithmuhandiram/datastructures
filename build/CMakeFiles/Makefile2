@@ -332,8 +332,8 @@ test/preinstall:
 # Target rules for target test/CMakeFiles/DoublyLinkedListTest.dir
 
 # All Build rule for target.
-test/CMakeFiles/DoublyLinkedListTest.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
 test/CMakeFiles/DoublyLinkedListTest.dir/all: CMakeFiles/DoublyLinkedList.dir/all
+test/CMakeFiles/DoublyLinkedListTest.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
 test/CMakeFiles/DoublyLinkedListTest.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f test/CMakeFiles/DoublyLinkedListTest.dir/build.make test/CMakeFiles/DoublyLinkedListTest.dir/depend
 	$(MAKE) -f test/CMakeFiles/DoublyLinkedListTest.dir/build.make test/CMakeFiles/DoublyLinkedListTest.dir/build
