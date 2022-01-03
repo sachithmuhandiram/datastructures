@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../doublylinkedList.hpp"
+//#include "../doublylinkedList.hpp"
 #include "../doublylinkedList.cpp"
 
 //#include <ncurses.h>
@@ -39,4 +39,18 @@ TEST_F(DoublyLinkedListTest,initializingANodeWithAValue){
     ASSERT_EQ(doublylinkedlist->value,5);
     EXPECT_TRUE(doublylinkedlist->earlyNode == nullptr);
     EXPECT_TRUE(doublylinkedlist->nextNode == nullptr);
+}
+
+TEST_F(DoublyLinkedListTest,addingOneNodeToExistingList){
+
+    DoublyLinkedList *firstNode = addANode(2);
+    DoublyLinkedList *secondNode = addANode(5);
+
+    addANewNodeToList(firstNode,secondNode);
+
+    EXPECT_TRUE(firstNode->earlyNode == nullptr);
+    EXPECT_TRUE(firstNode->nextNode == secondNode);
+    EXPECT_TRUE(secondNode->earlyNode == firstNode);
+    EXPECT_TRUE(secondNode->nextNode == nullptr);
+
 }

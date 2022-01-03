@@ -1,4 +1,4 @@
-# Install script for directory: /home/sachith/Documents/Personal/Projects/datastructures
+# Install script for directory: /home/sachith/Documents/Github/datastructures
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/sachith/Documents/Personal/Projects/datastructures/build/test/cmake_install.cmake")
+  include("/home/sachith/Documents/Github/datastructures/build/googletest/cmake_install.cmake")
+  include("/home/sachith/Documents/Github/datastructures/build/test/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sachith/Documents/Personal/Projects/datastructures/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sachith/Documents/Github/datastructures/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

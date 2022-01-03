@@ -9,7 +9,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG")
 enable_testing()
 
-#add_subdirectory(googletest)
+add_subdirectory(googletest)
 
 set(Header
     doublylinkedList.hpp

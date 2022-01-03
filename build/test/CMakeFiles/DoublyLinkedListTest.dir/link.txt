@@ -1,1 +1,1 @@
-/usr/bin/x86_64-linux-gnu-g++-8  -g -DDEBUG   CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.o  -o DoublyLinkedListTest -lgtest_main ../libDoublyLinkedList.a -lncurses 
+/bin/g++-9  -g -DDEBUG   CMakeFiles/DoublyLinkedListTest.dir/DoublyLinkedListTest.cpp.o  -o DoublyLinkedListTest  ../lib/libgtest_maind.a ../libDoublyLinkedList.a -lncurses ../lib/libgtestd.a -lpthread 

@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.cpp
+/home/sachith/Documents/Github/datastructures/doublylinkedList.cpp
 doublylinkedList.hpp
-/home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.hpp
+/home/sachith/Documents/Github/datastructures/doublylinkedList.hpp
 
-/home/sachith/Documents/Personal/Projects/datastructures/doublylinkedList.hpp
+/home/sachith/Documents/Github/datastructures/doublylinkedList.hpp
 cstddef
 -
 iostream
