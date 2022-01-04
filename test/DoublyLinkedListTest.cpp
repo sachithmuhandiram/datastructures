@@ -41,7 +41,7 @@ TEST_F(DoublyLinkedListTest,initializingANodeWithAValue){
     EXPECT_TRUE(doublylinkedlist->nextNode == nullptr);
 }
 
-TEST_F(DoublyLinkedListTest,addingOneNodeToExistingList){
+TEST_F(DoublyLinkedListTest,addingOneNodeToTheEndOfExistingList){
 
     DoublyLinkedList *firstNode = addANode(2);
     DoublyLinkedList *secondNode = addANode(5);
@@ -52,5 +52,23 @@ TEST_F(DoublyLinkedListTest,addingOneNodeToExistingList){
     EXPECT_TRUE(firstNode->nextNode == secondNode);
     EXPECT_TRUE(secondNode->earlyNode == firstNode);
     EXPECT_TRUE(secondNode->nextNode == nullptr);
+
+}
+
+TEST_F(DoublyLinkedListTest,addingOneNodeToTheEndExistingMultipleNodeList){
+
+    DoublyLinkedList *firstNode = addANode(10);
+    DoublyLinkedList *secondNode = addANode(15);
+    DoublyLinkedList *thirdNode = addANode(20);
+
+    addANewNodeToEndOfTheList(firstNode,secondNode);
+    addANewNodeToEndOfTheList(firstNode,thirdNode);
+
+    EXPECT_TRUE(firstNode->earlyNode == nullptr);
+    EXPECT_TRUE(firstNode->nextNode == secondNode);
+    EXPECT_TRUE(secondNode->earlyNode == firstNode);
+    EXPECT_TRUE(secondNode->nextNode == thirdNode);
+    EXPECT_TRUE(thirdNode->earlyNode == secondNode);
+    EXPECT_TRUE(thirdNode->nextNode == nullptr);
 
 }
