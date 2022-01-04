@@ -46,7 +46,7 @@ TEST_F(DoublyLinkedListTest,addingOneNodeToExistingList){
     DoublyLinkedList *firstNode = addANode(2);
     DoublyLinkedList *secondNode = addANode(5);
 
-    addANewNodeToList(firstNode,secondNode);
+    addANewNodeToEndOfTheList(firstNode,secondNode);
 
     EXPECT_TRUE(firstNode->earlyNode == nullptr);
     EXPECT_TRUE(firstNode->nextNode == secondNode);

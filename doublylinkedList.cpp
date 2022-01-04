@@ -9,3 +9,9 @@ DoublyLinkedList* addANode(int nodeVal){
 
     return newNode;
 }
+
+void addANewNodeToEndOfTheList(DoublyLinkedList *existingList,DoublyLinkedList *newNode){
+
+    existingList->nextNode = newNode;
+    newNode->earlyNode = existingList;
+}
