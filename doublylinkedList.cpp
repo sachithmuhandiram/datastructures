@@ -15,3 +15,22 @@ void addANewNodeToEndOfTheList(DoublyLinkedList *existingList,DoublyLinkedList *
     existingList->nextNode = newNode;
     newNode->earlyNode = existingList;
 }
+
+DoublyLinkedList *getTheLastNodeOfAList(DoublyLinkedList *existingList){
+
+    if(existingList->nextNode == nullptr ){
+        return existingList;
+    }
+
+    while (existingList != NULL)
+    {
+        existingList = existingList->nextNode;
+
+        if (existingList->nextNode != nullptr)
+        {
+            return existingList;
+        }
+        
+    }
+    return NULL;
+}
