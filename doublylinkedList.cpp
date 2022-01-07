@@ -12,8 +12,10 @@ DoublyLinkedList* addANode(int nodeVal){
 
 void addANewNodeToEndOfTheList(DoublyLinkedList *existingList,DoublyLinkedList *newNode){
     // This needs to update to get the last node and then add newNode to that last node.
-    existingList->nextNode = newNode;
-    newNode->earlyNode = existingList;
+
+    DoublyLinkedList *lastNode = getTheLastNodeOfAList(existingList);
+    lastNode->nextNode = newNode;
+    newNode->earlyNode = lastNode;
 }
 
 DoublyLinkedList *getTheLastNodeOfAList(DoublyLinkedList *existingList){
@@ -22,11 +24,11 @@ DoublyLinkedList *getTheLastNodeOfAList(DoublyLinkedList *existingList){
         return existingList;
     }
 
-    while (existingList != NULL)
+    while (existingList->nextNode != nullptr)
     {
         existingList = existingList->nextNode;
 
-        if (existingList->nextNode != nullptr)
+        if (existingList->nextNode == nullptr)
         {
             return existingList;
         }
