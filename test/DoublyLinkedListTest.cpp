@@ -137,3 +137,36 @@ TEST_F(DoublyLinkedListTest,getTheFirstNodeOfASingleNodeList){
     EXPECT_TRUE(firstNode->earlyNode == nullptr);
     EXPECT_EQ(firstNode->value,10);
 }
+
+TEST_F(DoublyLinkedListTest,getTheFirstNodeOfMultipleNodeList){
+
+    DoublyLinkedList *firstNode = addANode(5);
+    DoublyLinkedList *secondNode = addANode(22);
+
+    firstNode->nextNode = secondNode;
+    secondNode->earlyNode = firstNode;
+
+    DoublyLinkedList *theFirstNode = getTheFirstNodeOfAList(firstNode);
+
+    EXPECT_EQ(theFirstNode->value,5);
+    EXPECT_TRUE(theFirstNode->earlyNode == nullptr);
+    EXPECT_TRUE(theFirstNode->nextNode == secondNode);
+}
+
+TEST_F(DoublyLinkedListTest,getTheFirstNodeOfMultipleNodeListTwo){
+
+    DoublyLinkedList *firstNode = addANode(15);
+    DoublyLinkedList *secondNode = addANode(2);
+    DoublyLinkedList *thirdNode = addANode(8);
+
+    firstNode->nextNode = secondNode;
+    secondNode->earlyNode = firstNode;
+    thirdNode->earlyNode = secondNode;
+    secondNode->nextNode = thirdNode;
+
+    DoublyLinkedList *theFirstNode = getTheFirstNodeOfAList(firstNode);
+
+    EXPECT_EQ(theFirstNode->value,15);
+    EXPECT_TRUE(theFirstNode->earlyNode == nullptr);
+    EXPECT_TRUE(theFirstNode->nextNode == secondNode);
+}

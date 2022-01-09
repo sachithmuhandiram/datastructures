@@ -36,3 +36,15 @@ DoublyLinkedList *getTheLastNodeOfAList(DoublyLinkedList *existingList){
     }
     return NULL;
 }
+
+DoublyLinkedList *getTheFirstNodeOfAList(DoublyLinkedList *existingList){
+    // Just one node
+    if (existingList->nextNode == nullptr && existingList->earlyNode == nullptr){
+        return existingList;
+    }else if (existingList->earlyNode == nullptr && existingList->nextNode != nullptr)
+    {
+        return existingList;
+    }
+    
+    return nullptr;
+}
