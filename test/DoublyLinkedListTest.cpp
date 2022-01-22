@@ -209,10 +209,35 @@ TEST_F(DoublyLinkedListTest,addingANewNodeToBegingOfMultipleList){
 TEST_F(DoublyLinkedListTest,deleteANodeFromASingleNodeList){
 
     DoublyLinkedList *firstNode = addANode(5);
-    deleteANode(firstNode,5);
+    deleteANodeWithGivenValue(firstNode,5);
 
     EXPECT_TRUE(firstNode->nextNode == nullptr);
     EXPECT_TRUE(firstNode->earlyNode == nullptr);
     EXPECT_EQ(firstNode->value,0);
         
+}
+
+TEST_F(DoublyLinkedListTest,getANodeWithGivenValueFromSingleList){
+
+    DoublyLinkedList *firstNode = addANode(5);
+    DoublyLinkedList *nodeWithGivenValue = getANodeWithGivenValue(firstNode,5);
+
+    EXPECT_EQ(nodeWithGivenValue->value,5);
+    EXPECT_TRUE(nodeWithGivenValue->nextNode == nullptr);
+    EXPECT_TRUE(nodeWithGivenValue->earlyNode == nullptr);
+}
+
+TEST_F(DoublyLinkedListTest,getANodeWithGivenValueAList){
+
+    DoublyLinkedList *firstNode = addANode(8);
+    DoublyLinkedList *secondNode = addANode(10);
+
+    firstNode->nextNode = secondNode;
+    secondNode->earlyNode = firstNode;
+
+    DoublyLinkedList *nodeWithGivenValue = getANodeWithGivenValue(firstNode,10);
+
+    EXPECT_EQ(nodeWithGivenValue->value,10);
+    EXPECT_TRUE(nodeWithGivenValue->nextNode == nullptr);
+    EXPECT_TRUE(nodeWithGivenValue->earlyNode == firstNode);
 }
