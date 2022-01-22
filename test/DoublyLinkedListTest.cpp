@@ -205,3 +205,14 @@ TEST_F(DoublyLinkedListTest,addingANewNodeToBegingOfMultipleList){
     EXPECT_TRUE(newFirstNode->nextNode == firstNode);
     
 }
+
+TEST_F(DoublyLinkedListTest,deleteANodeFromASingleNodeList){
+
+    DoublyLinkedList *firstNode = addANode(5);
+    deleteANode(firstNode,5);
+
+    EXPECT_TRUE(firstNode->nextNode == nullptr);
+    EXPECT_TRUE(firstNode->earlyNode == nullptr);
+    EXPECT_EQ(firstNode->value,0);
+        
+}
