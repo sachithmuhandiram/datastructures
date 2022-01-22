@@ -12,3 +12,4 @@ DoublyLinkedList *addANode(int);
 void addANewNodeToEndOfTheList(DoublyLinkedList *,DoublyLinkedList *);
 DoublyLinkedList *getTheLastNodeOfAList(DoublyLinkedList *);
 DoublyLinkedList *getTheFirstNodeOfAList(DoublyLinkedList *);
+void addANodeToTheBeginingOfTheList(DoublyLinkedList *, DoublyLinkedList *);

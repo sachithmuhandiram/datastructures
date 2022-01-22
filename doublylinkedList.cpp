@@ -48,3 +48,12 @@ DoublyLinkedList *getTheFirstNodeOfAList(DoublyLinkedList *existingList){
     
     return nullptr;
 }
+
+void addANodeToTheBeginingOfTheList(DoublyLinkedList *existingList, DoublyLinkedList *newNode){
+
+    DoublyLinkedList *firstNode = getTheFirstNodeOfAList(existingList);
+
+    firstNode->earlyNode = newNode;
+    newNode->nextNode = firstNode;
+
+}

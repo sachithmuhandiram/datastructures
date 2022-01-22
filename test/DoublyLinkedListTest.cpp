@@ -185,3 +185,23 @@ TEST_F(DoublyLinkedListTest,addSingleNodeToTheBeginingOfTheListOfSingleNodeList)
     EXPECT_TRUE(newFirstNode->nextNode == firstNode);
     EXPECT_TRUE(newFirstNode->earlyNode == nullptr);
 }
+
+TEST_F(DoublyLinkedListTest,addingANewNodeToBegingOfMultipleList){
+
+    DoublyLinkedList *firstNode = addANode(4);
+    DoublyLinkedList *secondNode = addANode(7);
+    DoublyLinkedList *thirdNode = addANode(45);
+
+    firstNode->nextNode = secondNode;
+    secondNode->nextNode = thirdNode;
+
+    secondNode->earlyNode = firstNode;
+    thirdNode->earlyNode = secondNode;
+
+    DoublyLinkedList *newFirstNode = addANode(10);
+    addANodeToTheBeginingOfTheList(firstNode,newFirstNode);
+
+    EXPECT_TRUE(firstNode->earlyNode == newFirstNode);
+    EXPECT_TRUE(newFirstNode->nextNode == firstNode);
+    
+}
