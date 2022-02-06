@@ -252,7 +252,7 @@ TEST_F(DoublyLinkedListTest,getANodeWithOutGivenValueFromAListFails){
 
     DoublyLinkedList *nodeWithGivenValue = getANodeWithGivenValue(firstNode,11);
 
-    EXPECT_EQ(nodeWithGivenValue->value,11);
+    EXPECT_EQ(nodeWithGivenValue->value,0);
     EXPECT_TRUE(nodeWithGivenValue->nextNode == nullptr);
-    EXPECT_TRUE(nodeWithGivenValue->earlyNode == firstNode);
+
 }

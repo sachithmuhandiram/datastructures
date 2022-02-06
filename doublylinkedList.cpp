@@ -82,8 +82,13 @@ DoublyLinkedList *getANodeWithGivenValue(DoublyLinkedList *existingList,int valu
     }
     
     existingList = existingList->nextNode;
-    
   }
-  // the last node has the right value
-  return existingList;
+  // value is in the last node
+  if (existingList->value == value)
+  {
+      return existingList;
+  }
+  // handling given value not in the list 
+  DoublyLinkedList *nullNode = addANode(0);
+  return nullNode;
 }
