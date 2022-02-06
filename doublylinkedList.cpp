@@ -64,16 +64,16 @@ void deleteANodeWithGivenValue(DoublyLinkedList *existingList,int value){
 
 DoublyLinkedList *getANodeWithGivenValue(DoublyLinkedList *existingList,int value){
 
+// Handles single node scenario
   if (existingList->value ==0 && existingList->nextNode == nullptr)
   {
-    return existingList;
-  }else if (existingList->value == value)
+        return existingList;
+  }
+  else if (existingList->value == value)
   {
-      return existingList;
+        return existingList;
   }
   
-
-  DoublyLinkedList *nextNode = addANode(0);
   while (existingList->nextNode != nullptr)
   {
     if (existingList->value==value)
@@ -81,15 +81,9 @@ DoublyLinkedList *getANodeWithGivenValue(DoublyLinkedList *existingList,int valu
       return existingList;
     }
     
-    nextNode = existingList->nextNode;
-    if (nextNode->value == value)
-    {
-      return existingList;
-    } 
     existingList = existingList->nextNode;
     
   }
-  nextNode->value =0;
-  nextNode->nextNode = nullptr;
-  return nextNode;
+  // the last node has the right value
+  return existingList;
 }

@@ -241,3 +241,18 @@ TEST_F(DoublyLinkedListTest,getANodeWithGivenValueAList){
     EXPECT_TRUE(nodeWithGivenValue->nextNode == nullptr);
     EXPECT_TRUE(nodeWithGivenValue->earlyNode == firstNode);
 }
+
+TEST_F(DoublyLinkedListTest,getANodeWithOutGivenValueFromAListFails){
+
+    DoublyLinkedList *firstNode = addANode(8);
+    DoublyLinkedList *secondNode = addANode(10);
+
+    firstNode->nextNode = secondNode;
+    secondNode->earlyNode = firstNode;
+
+    DoublyLinkedList *nodeWithGivenValue = getANodeWithGivenValue(firstNode,11);
+
+    EXPECT_EQ(nodeWithGivenValue->value,11);
+    EXPECT_TRUE(nodeWithGivenValue->nextNode == nullptr);
+    EXPECT_TRUE(nodeWithGivenValue->earlyNode == firstNode);
+}
