@@ -13,5 +13,5 @@ void addANewNodeToEndOfTheList(DoublyLinkedList *,DoublyLinkedList *);
 DoublyLinkedList *getTheLastNodeOfAList(DoublyLinkedList *);
 DoublyLinkedList *getTheFirstNodeOfAList(DoublyLinkedList *);
 void addANodeToTheBeginingOfTheList(DoublyLinkedList *, DoublyLinkedList *);
-void deleteANodeWithGivenValue(DoublyLinkedList *,int);
+bool deleteANodeWithGivenValue(DoublyLinkedList *,int);
 DoublyLinkedList *getANodeWithGivenValue(DoublyLinkedList*,int);

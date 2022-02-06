@@ -209,11 +209,11 @@ TEST_F(DoublyLinkedListTest,addingANewNodeToBegingOfMultipleList){
 TEST_F(DoublyLinkedListTest,deleteANodeFromASingleNodeList){
 
     DoublyLinkedList *firstNode = addANode(5);
-    deleteANodeWithGivenValue(firstNode,5);
+    bool nodeDeleted = deleteANodeWithGivenValue(firstNode,5);
 
     EXPECT_TRUE(firstNode->nextNode == nullptr);
     EXPECT_TRUE(firstNode->earlyNode == nullptr);
-    EXPECT_EQ(firstNode->value,0);
+    EXPECT_EQ(nodeDeleted,true);
         
 }
 

@@ -58,8 +58,25 @@ void addANodeToTheBeginingOfTheList(DoublyLinkedList *existingList, DoublyLinked
 
 }
 
-void deleteANodeWithGivenValue(DoublyLinkedList *existingList,int value){
+bool deleteANodeWithGivenValue(DoublyLinkedList *existingList,int value){
+    
+    DoublyLinkedList *nodeWithTheGivenValue = getANodeWithGivenValue(existingList,value);
 
+    if (nodeWithTheGivenValue->value == 0)
+    {
+       return false; 
+    }
+
+    DoublyLinkedList *earlierNode = nodeWithTheGivenValue->earlyNode;
+    DoublyLinkedList *newNextNode = nodeWithTheGivenValue->nextNode;
+
+    earlierNode->nextNode = newNextNode;
+    newNextNode->earlyNode = earlierNode;
+
+    delete nodeWithTheGivenValue;
+
+    return true;
+    
 }
 
 DoublyLinkedList *getANodeWithGivenValue(DoublyLinkedList *existingList,int value){
