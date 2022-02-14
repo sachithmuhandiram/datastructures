@@ -211,9 +211,52 @@ TEST_F(DoublyLinkedListTest,deleteANodeFromASingleNodeList){
     DoublyLinkedList *firstNode = addANode(5);
     bool nodeDeleted = deleteANodeWithGivenValue(firstNode,5);
 
-   // EXPECT_TRUE(firstNode->nextNode == nullptr);
-   // EXPECT_TRUE(firstNode->earlyNode == nullptr);
     EXPECT_EQ(nodeDeleted,true);
+        
+}
+
+TEST_F(DoublyLinkedListTest,deleteANodeFromMultipleNodeList){
+
+    DoublyLinkedList *firstNode = addANode(15);
+    DoublyLinkedList *secondNode = addANode(17);
+
+    firstNode->nextNode = secondNode;
+    secondNode->earlyNode = firstNode;
+
+    bool nodeDeleted = deleteANodeWithGivenValue(firstNode,15);
+
+    EXPECT_EQ(nodeDeleted,true);
+    //EXPECT_TRUE(secondNode->earlyNode == nullptr);
+    EXPECT_EQ(secondNode->value,17);
+        
+}
+
+TEST_F(DoublyLinkedListTest,deleteANodeNotInASingleNodeList){
+
+    DoublyLinkedList *firstNode = addANode(5);
+    bool nodeDeleted = deleteANodeWithGivenValue(firstNode,15);
+
+    EXPECT_EQ(nodeDeleted,false);
+        
+}
+
+TEST_F(DoublyLinkedListTest,deleteANodeFromMultipleNodeList2){
+
+    DoublyLinkedList *firstNode = addANode(25);
+    DoublyLinkedList *secondNode = addANode(37);
+    DoublyLinkedList *thirdNode = addANode(5);
+
+    firstNode->nextNode = secondNode;
+    secondNode->nextNode = thirdNode;
+
+    secondNode->earlyNode = firstNode;
+    thirdNode->earlyNode = secondNode;
+
+    bool nodeDeleted = deleteANodeWithGivenValue(firstNode,15);
+
+    EXPECT_EQ(nodeDeleted,true);
+    EXPECT_TRUE(secondNode->earlyNode == nullptr);
+    EXPECT_EQ(secondNode->value,17);
         
 }
 
