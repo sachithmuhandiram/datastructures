@@ -61,12 +61,12 @@ void addANodeToTheBeginingOfTheList(DoublyLinkedList *existingList, DoublyLinked
 bool deleteANodeWithGivenValue(DoublyLinkedList *existingList,int value){
     
     DoublyLinkedList *nodeWithTheGivenValue = getANodeWithGivenValue(existingList,value);
-
+    // Not exiting node
     if (nodeWithTheGivenValue->value == 0)
     {
        return false; 
     }
-
+    // deleting single node list
     if (nodeWithTheGivenValue->earlyNode == nullptr && nodeWithTheGivenValue->nextNode == nullptr)
     {
         delete nodeWithTheGivenValue;
@@ -79,8 +79,18 @@ bool deleteANodeWithGivenValue(DoublyLinkedList *existingList,int value){
         if (nodeWithTheGivenValue->nextNode == nullptr)
         {
             delete nodeWithTheGivenValue;
+            earlierNode->nextNode = nullptr;
+            return true;
+
+        }else if (earlierNode == nullptr) // deleting the first node
+        {
+            DoublyLinkedList *newFirstNode = nodeWithTheGivenValue->nextNode;
+            newFirstNode->earlyNode = nullptr;
+
+            delete nodeWithTheGivenValue;
             return true;
         }
+        
         
         // DoublyLinkedList *newNextNode = nodeWithTheGivenValue->nextNode;
 
@@ -88,14 +98,15 @@ bool deleteANodeWithGivenValue(DoublyLinkedList *existingList,int value){
         // newNextNode->earlyNode = earlierNode;
         // delete nodeWithTheGivenValue;
 
-        //  return true;
+        return false;
     }
+   
 }
 
 DoublyLinkedList *getANodeWithGivenValue(DoublyLinkedList *existingList,int value){
 
 // Handles single node scenario
-  if (existingList->value ==0 && existingList->nextNode == nullptr)
+  if (existingList->value ==value && existingList->nextNode == nullptr)
   {
         return existingList;
   }

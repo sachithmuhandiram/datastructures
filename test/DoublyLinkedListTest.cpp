@@ -252,11 +252,31 @@ TEST_F(DoublyLinkedListTest,deleteANodeFromMultipleNodeList2){
     secondNode->earlyNode = firstNode;
     thirdNode->earlyNode = secondNode;
 
-    bool nodeDeleted = deleteANodeWithGivenValue(firstNode,15);
+    bool nodeDeleted = deleteANodeWithGivenValue(firstNode,25);
 
     EXPECT_EQ(nodeDeleted,true);
     EXPECT_TRUE(secondNode->earlyNode == nullptr);
-    EXPECT_EQ(secondNode->value,17);
+    EXPECT_EQ(secondNode->value,37);
+        
+}
+
+TEST_F(DoublyLinkedListTest,deleteANodeInMiddleOfMultipleNodeList){
+
+    DoublyLinkedList *firstNode = addANode(25);
+    DoublyLinkedList *secondNode = addANode(37);
+    DoublyLinkedList *thirdNode = addANode(5);
+
+    firstNode->nextNode = secondNode;
+    secondNode->nextNode = thirdNode;
+
+    secondNode->earlyNode = firstNode;
+    thirdNode->earlyNode = secondNode;
+
+    bool nodeDeleted = deleteANodeWithGivenValue(firstNode,37);
+
+    EXPECT_EQ(nodeDeleted,true);
+    EXPECT_TRUE(firstNode->nextNode == thirdNode);
+    EXPECT_TRUE(thirdNode->earlyNode == firstNode);
         
 }
 
