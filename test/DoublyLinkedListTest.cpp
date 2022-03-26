@@ -206,6 +206,31 @@ TEST_F(DoublyLinkedListTest,addingANewNodeToBegingOfMultipleList){
     
 }
 
+TEST_F(DoublyLinkedListTest,addSingleNodeToNextToAGivenNodeInList){
+
+    DoublyLinkedList *firstNode = addANode(10);
+    DoublyLinkedList *secondNode = addANode(25);
+    DoublyLinkedList *thirdNode = addANode(12);
+
+    firstNode->nextNode = secondNode;
+    secondNode->nextNode = thirdNode;
+
+    secondNode->earlyNode = firstNode;
+    thirdNode->earlyNode = secondNode;
+
+    DoublyLinkedList *newNode = addANode(15);
+
+    addANodeAfterAGivenNode(firstNode,15,newNode);
+
+    EXPECT_EQ(secondNode->value,25);
+    EXPECT_EQ(newNode->value,15);
+
+    EXPECT_TRUE(secondNode->nextNode == newNode);
+    EXPECT_TRUE(newNode->earlyNode == secondNode);
+    EXPECT_TRUE(newNode->nextNode == thirdNode);
+    EXPECT_TRUE(thirdNode->earlyNode == newNode);
+}
+
 TEST_F(DoublyLinkedListTest,deleteANodeFromASingleNodeList){
 
     DoublyLinkedList *firstNode = addANode(5);
