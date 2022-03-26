@@ -231,6 +231,18 @@ TEST_F(DoublyLinkedListTest,deleteANodeFromMultipleNodeList){
         
 }
 
+TEST_F(DoublyLinkedListTest,deleteANodeNotInAMultipleNodeList){
+
+    DoublyLinkedList *firstNode = addANode(5);
+    DoublyLinkedList *secondNode = addANode(12);
+    DoublyLinkedList *thirdNode = addANode(52);
+    
+    bool nodeDeleted = deleteANodeWithGivenValue(firstNode,15);
+
+    EXPECT_EQ(nodeDeleted,false);
+        
+}
+
 TEST_F(DoublyLinkedListTest,deleteANodeNotInASingleNodeList){
 
     DoublyLinkedList *firstNode = addANode(5);

@@ -89,14 +89,16 @@ bool deleteANodeWithGivenValue(DoublyLinkedList *existingList,int value){
 
             delete nodeWithTheGivenValue;
             return true;
-        }
-        
-        
-        // DoublyLinkedList *newNextNode = nodeWithTheGivenValue->nextNode;
+        }else{
+            DoublyLinkedList *newEarlierNode = nodeWithTheGivenValue->earlyNode;
+            DoublyLinkedList *newNextNode = nodeWithTheGivenValue->nextNode;
 
-        // earlierNode->nextNode = newNextNode;
-        // newNextNode->earlyNode = earlierNode;
-        // delete nodeWithTheGivenValue;
+            delete nodeWithTheGivenValue;
+
+            newEarlierNode->nextNode = newNextNode;
+            newNextNode->earlyNode = newEarlierNode;
+            return true;
+        }
 
         return false;
     }
