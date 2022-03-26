@@ -18,6 +18,24 @@ void addANewNodeToEndOfTheList(DoublyLinkedList *existingList,DoublyLinkedList *
     newNode->earlyNode = lastNode;
 }
 
+void addANodeAfterAGivenNode(DoublyLinkedList *existingList, int nodeVal,DoublyLinkedList *newNode){
+    
+    DoublyLinkedList *nodeWithGivenValue = getANodeWithGivenValue(existingList,nodeVal);
+
+    if (nodeWithGivenValue->value == 0 && nodeWithGivenValue->earlyNode == nullptr && nodeWithGivenValue->nextNode == nullptr)
+    {
+       // do nothing for not in the list value was given
+    }
+    
+    DoublyLinkedList *thirdNode = nodeWithGivenValue->nextNode;
+
+    nodeWithGivenValue->nextNode = newNode;
+    newNode->earlyNode = nodeWithGivenValue;
+    newNode->nextNode = thirdNode;
+    thirdNode->earlyNode = newNode;
+}
+
+
 DoublyLinkedList *getTheLastNodeOfAList(DoublyLinkedList *existingList){
 
     if(existingList->nextNode == nullptr ){

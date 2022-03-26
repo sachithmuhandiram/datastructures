@@ -10,6 +10,7 @@ class DoublyLinkedList{
 
 DoublyLinkedList *addANode(int);
 void addANewNodeToEndOfTheList(DoublyLinkedList *,DoublyLinkedList *);
+void addANodeAfterAGivenNode(DoublyLinkedList *, int,DoublyLinkedList *);
 DoublyLinkedList *getTheLastNodeOfAList(DoublyLinkedList *);
 DoublyLinkedList *getTheFirstNodeOfAList(DoublyLinkedList *);
 void addANodeToTheBeginingOfTheList(DoublyLinkedList *, DoublyLinkedList *);
